@@ -16,14 +16,15 @@ var cols = [
 { id : "cc", alias: "Percent of Trips Paid with Credit Card", dataType : tableau.dataTypeEnum.string}
 ];
 var tableInfo = {
-id : "taxi",
-alias : "TLC Trip Data",
+id : "systemInfo",
+alias : "Tableau System Info",
 columns : cols
 };
 schemaCallback([tableInfo]);
 };
 myConnector.getData = function(table, doneCallback) {
-$.getJSON("http://www.nyc.gov/html/tlc/downloads/csv/data_reports_mont  hly_indicators_yellow.json ", function(resp) {
+
+$.getJSON("http://www.nyc.gov/html/tlc/downloads/csv/data_reports_monthly_indicators_yellow.json", function(resp) {
 var feat = resp;
 tableData = [];
 // Iterate over the JSON object
@@ -50,7 +51,7 @@ doneCallback();
 tableau.registerConnector(myConnector);
 $(document).ready(function () {
 $("#submitButton").click(function () {
-tableau.connectionName = "taxi";
+tableau.connectionName = "systemInfo";
 tableau.submit();
 });
 });})();

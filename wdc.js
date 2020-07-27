@@ -24,7 +24,7 @@ schemaCallback([tableInfo]);
 };
 myConnector.getData = function(table, doneCallback) {
 
-$.getJSON("http://www.nyc.gov/html/tlc/downloads/csv/data_reports_monthly_indicators_yellow.json", function(resp) {
+$.getJSON("file:///C:/Users/gohaik/Desktop/Big%20Data/bkg_files/bkg_files/bkg-bl-mf-20200416103056759.json", function(resp) {
 var feat = resp;
 tableData = [];
 // Iterate over the JSON object
